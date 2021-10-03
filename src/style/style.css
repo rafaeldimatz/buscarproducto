@@ -1,0 +1,256 @@
+body {
+    /*font-family: "Public Sans", sans-serif;*/
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+    height:100vh;
+    background-color: #ebebeb;
+  }
+/*----------------- Fin Search ----------------------------------*/  
+  header{
+      display:flex;
+      background-color:yellow;
+      width:100%;
+      height:100px;
+      justify-content:center
+  }
+  
+  .item-logo{
+      align-self: center;
+      color:#999000
+  }
+
+  .item-header{
+      width: 800px;  
+      height:50px;
+      align-self:center
+  }
+  .item-button{
+    height:50px;
+    align-self:center
+}
+  form input[type=text] {
+    padding: 10px;
+    border: none;
+    float: left;
+    width: 100%;
+    outline: none;
+}
+
+.awasone{
+    height: 35px;
+    background-color: #ebebeb;
+}
+/*----------------- Fin Search ----------------------------------*/
+/*----------------- Results ----------------------------------*/
+.wrapper-results{
+    width: 100;
+    height: 100;
+    background-color: #ebebeb;
+}
+.results{
+    height: 100vh;
+}
+.container{
+    margin:40px 360px 40px 360px;
+    width: 100;
+    height: 100;
+    background-color: #fff;
+}
+
+.flex-container{
+display: flex;
+justify-content: space-around;
+}
+
+.flex-items-img img{
+    object-fit:contain ;
+    width: 120px;
+    height: 120px;
+}
+
+.flex-items-img{
+    width: 200px;
+}
+
+.flex-items-title{
+    width: 400px;
+}
+
+.flex-items-state{
+    width: 300px;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+span{
+    /*margin-left: 360px;*/
+    color:rgb(179, 175, 175)
+}
+.type{
+    color:#00a650;
+}
+
+p{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size:15px
+}
+
+/*@media (max-width:1200px){
+    .container {
+        margin: 40px 60px 40px 60px;
+        width: 100;
+        height: 100;
+        background-color: #fff;
+    }
+}*/
+
+@media (max-width:400px){
+    .flex-items-img img {
+        object-fit: contain;
+        width: 80px;
+        height: 80px;
+    }
+    .flex-items-state{
+        display:none
+    }
+}
+/*-------------------Fin Results--------------------------*/
+  .spinner{
+    width: 100%;
+    margin-left:50%;
+    align-items: center;
+}
+
+/* ------------------------------------------ Details -------------------------------------- */
+.wrapper-details{
+    height: 100%;
+    background-color:#ebebeb;
+}
+
+.span-path{
+    margin-top:10px;
+    margin-left:360px;
+}
+
+.container-details{
+    margin:40px 360px 40px 360px;
+    height: 100%;
+    background-color: #fff;
+}
+
+.flex-details{
+    display:flex;
+    justify-content:space-between;
+    background-color:#fff;
+}
+
+.flex-details-img{
+    align-self: center;
+    
+}
+
+.flex-details-img img{
+    object-fit:contain ;
+    width: 320px;
+    height: 320px;
+}
+
+.flex-details-title{
+    width: 50%;
+    height: 40%;
+    font-size: 10px;
+    overflow: hidden;
+}
+
+.container-state{
+    display:flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.description{
+    margin-top: 10px;
+    font-weight: 600;
+}
+.comprarbtn{
+    cursor: pointer;
+    background-color: #3483fa;
+    color:#fff;
+    font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 48px;
+    padding: 0 24px;
+    width: 220px;
+    height: 48px;
+    text-align: center;
+    border-radius: 6px;
+    border-color:transparent;
+}
+.precio p{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+@media (max-width:1300px){
+    .span-path{
+        margin-top:10px;
+        margin-left:50px;
+    }
+    .container-details{
+        margin:40px 60px 40px 60px;
+        height: 100%;
+        background-color: #fff;
+    }
+    .flex-details-title{
+        width:100%;
+        height: 40%;
+        font-size: 15px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width:700px){
+    .span-path{
+        margin-top:10px;
+        margin-left:60px;
+    }
+    .flex-details {
+        display:flex;
+        flex-direction: column;
+        background-color: #fff;
+    }
+    .flex-details-img img {
+    object-fit: contain;
+    width: 180px;
+    height: 180px;
+    }
+    .wrapper-details{
+      margin: 40px;
+    }
+}
+
+@media (max-width:450px){
+    .span-path{
+        margin-top:10px;
+        margin-left:10px;
+    }
+    .container-details {
+        margin: 5px;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+    }
+    .container-state {
+        display: flex;
+        flex-direction: column;
+        margin: 25px;
+    }
+    .comprarbtn {
+        width: 150px;
+    }
+}
+/* ------------------------------------------ Fin Details -------------------------------------- */
