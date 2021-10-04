@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
+import { Fragment } from "react/cjs/react.production.min";
 import "../style/style.css";
 
 export default function Results() {
@@ -9,9 +10,13 @@ export default function Results() {
   const [load, setLoad] = useState(true); //Activar/Desactivar Spinner
   //Dado el valor escrito en el input, lo tengo como parametro, para llamar a la api
   useEffect(() => {
-    //const url = process.env.REACT_APP_URL_PRODUCTS + searchprod;
+   // const url = process.env.REACT_APP_URL_PRODUCTS + searchprod;
     const url = "http://localhost:8080/demo-0.0.1-SNAPSHOT/productos"
+    if (searchprod !== undefined){
+      debugger
     fetch(url,{
+      "access-control-allow-origin" : "*",
+
       "method": "GET",
       "headers": {
         "search": searchprod
@@ -23,13 +28,18 @@ export default function Results() {
         setLoad(false);
       })
       .catch((err) => console.log("Error:" + err));
+    }else{
+      setLoad(false);
+    }
   }, [searchprod]);
 
   return (
     <div className="results">
+      {listProducts.length > 0 || searchprod !== undefined ? 
       <div className="span-path">
         <span>categoria - ciudad - pais</span>
       </div>
+      :<Fragment></Fragment>}
       {load ? (
         <div className="spinner">
           <ClipLoader color={"white"} border={"10px solid"} size={50} />

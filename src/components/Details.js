@@ -36,7 +36,7 @@ export default function Details() {
       .catch((err) => console.log("Error Description:" + err));
   }, [id]);
   return (
-    <div class="results">
+    <div className="results">
       <div className="span-path">
         <span>categoria - ciudad - pais</span>
       </div>

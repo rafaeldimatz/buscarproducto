@@ -16,10 +16,10 @@ export default function Search() {
 
   return (
     <header>
-      <div class="item-logo">
+      <div className="item-logo">
         <img src={logo} alt="Mercado Libre"></img>
       </div>
-      <div class="item-header">
+      <div className="item-header">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -36,7 +36,7 @@ export default function Search() {
           />
         </form>
       </div>
-      <div class="item-button">
+      <div className="item-button">
         <div className="awasone">
           <a id="home-link" data-testid="a" href={`/items/search/${searchText}`}>
             {" "}
