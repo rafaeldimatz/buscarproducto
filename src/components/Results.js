@@ -29,10 +29,9 @@ export default function Results() {
       setLoad(false);
     }
   }, [searchprod]);
-
   return (
     <div className="results">
-      {listProducts.length > 0 || searchprod !== undefined ? 
+      {listProducts.length > 0 && searchprod !== undefined && searchprod !== '' ? 
       <div className="span-path">
         <span>categoria - ciudad - pais</span>
       </div>

@@ -138,6 +138,7 @@ p{
 }
 
 .span-path{
+    font-size:15px;
     margin-top:10px;
     margin-left:360px;
 }
@@ -203,6 +204,7 @@ p{
 
 @media (max-width:1300px){
     .span-path{
+        font-size:15px;
         margin-top:10px;
         margin-left:50px;
     }
@@ -221,6 +223,7 @@ p{
 
 @media (max-width:700px){
     .span-path{
+        font-size:15px;
         margin-top:10px;
         margin-left:60px;
     }
@@ -241,8 +244,9 @@ p{
 
 @media (max-width:450px){
     .span-path{
+        font-size:15px;
         margin-top:10px;
-        margin-left:10px;
+       /* margin-left:10px;*/
     }
     .container-details {
         margin: 5px;

@@ -52,7 +52,7 @@ export default function Details() {
   return (
     <div className="results">
       <div className="span-path">
-        <span>{productDetail.warranty} categoria - ciudad - pais</span>
+        <span>categoria - ciudad - pais</span>
       </div>
       {loadDet || loadDesc ? (
         <div className="spinner">
