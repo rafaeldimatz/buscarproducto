@@ -10,9 +10,17 @@ export default function Details() {
   const [loadDet, setLoadDet] = useState(true); //Activar/Desactivar Spinner
   const [loadDesc, setLoadDesc] = useState(true); //Activar/Desactivar Spinner
   useEffect(() => {
-    const url = process.env.REACT_APP_URL_PRODUCTS_DETAILS + id;
-    const urlDesc = process.env.REACT_APP_URL_PRODUCTS_DESCRIPTION + id + "/description";
-    fetch(url)
+    //const url = process.env.REACT_APP_URL_PRODUCTS_DETAILS + id;
+    //const urlDesc = process.env.REACT_APP_URL_PRODUCTS_DESCRIPTION + id + "/description";
+    const url = window.generalConfiguration.URL_PRODUCTS_DETAILS + id;
+    const urlDesc = window.generalConfiguration.URL_PRODUCTS_DESCRIPTION + id + "/description";
+    fetch(url,{
+      "access-control-allow-origin" : "*",
+      "method": "GET",
+      "headers": {
+        "search": id
+      }
+    })
       .then((response) => {
         setLoadDet(false);
         if (response.status !== 404) return response.json();
@@ -23,7 +31,13 @@ export default function Details() {
         setProductDetail(data);
       })
       .catch((err) => console.log("Error Detail:" + err));
-    fetch(urlDesc)
+    fetch(urlDesc,{
+      "access-control-allow-origin" : "*",
+      "method": "GET",
+      "headers": {
+        "search": id
+      }
+    })
       .then((response) => {
         setLoadDesc(false);
         if (response.status !== 404) return response.json();
@@ -38,7 +52,7 @@ export default function Details() {
   return (
     <div className="results">
       <div className="span-path">
-        <span>categoria - ciudad - pais</span>
+        <span>{productDetail.warranty} categoria - ciudad - pais</span>
       </div>
       {loadDet || loadDesc ? (
         <div className="spinner">

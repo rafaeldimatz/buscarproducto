@@ -10,7 +10,7 @@ return (
         <Switch>
           <Route exact path="/"/>
           <Route exact path="/item/:id"  component={ProductDetails}/>
-          <Route exact path="/items/search/:searchprod?" component={ProductsResults}/>          
+          <Route exact path="/items/search/:searchprod" component={ProductsResults}/>          
         </Switch>
     </Router>
   );

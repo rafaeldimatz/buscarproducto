@@ -10,13 +10,10 @@ export default function Results() {
   const [load, setLoad] = useState(true); //Activar/Desactivar Spinner
   //Dado el valor escrito en el input, lo tengo como parametro, para llamar a la api
   useEffect(() => {
-   // const url = process.env.REACT_APP_URL_PRODUCTS + searchprod;
-    const url = "http://localhost:8080/demo-0.0.1-SNAPSHOT/productos"
-    if (searchprod !== undefined){
-      debugger
+   const url = window.generalConfiguration.URL_PRODUCTS
+   if (searchprod !== undefined){
     fetch(url,{
       "access-control-allow-origin" : "*",
-
       "method": "GET",
       "headers": {
         "search": searchprod

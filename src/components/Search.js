@@ -3,15 +3,17 @@ import "../style/style.css";
 import logo from "../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {withRouter} from 'react-router-dom'
 
-export default function Search() {
+function Search(props) {
   const [searchText, setSearchText] = useState(""); //Guarda la palabra escrita en el input
   const onSearchTextChange = (e) => {
     setSearchText(e.target.value);
   };
-
+  const {history} = props;
   const handleSubmit = (search) => {
-    document.getElementById("home-link").click();
+   //`/items/search/${searchText.split(" ").join("")}`
+    history.push(`/items/search/${searchText}`)
   };
 
   return (
@@ -52,3 +54,4 @@ export default function Search() {
     </header>
   );
 }
+export default withRouter(Search);
