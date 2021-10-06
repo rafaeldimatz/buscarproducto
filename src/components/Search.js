@@ -12,8 +12,7 @@ function Search(props) {
   };
   const {history} = props;
   const handleSubmit = (search) => {
-   //`/items/search/${searchText.split(" ").join("")}`
-    history.push(`/items/search/${searchText}`)
+       history.push(`/items/search/${searchText}`)
   };
 
   return (

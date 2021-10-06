@@ -38,7 +38,7 @@ export default function Results() {
       :<Fragment></Fragment>}
       {load ? (
         <div className="spinner">
-          <ClipLoader color={"white"} border={"10px solid"} size={50} />
+          <ClipLoader color={"#fff159"} border={"10px solid"} size={50} />
         </div>
       ) : (
         <div className="container">

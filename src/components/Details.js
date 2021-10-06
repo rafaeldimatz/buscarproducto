@@ -10,8 +10,6 @@ export default function Details() {
   const [loadDet, setLoadDet] = useState(true); //Activar/Desactivar Spinner
   const [loadDesc, setLoadDesc] = useState(true); //Activar/Desactivar Spinner
   useEffect(() => {
-    //const url = process.env.REACT_APP_URL_PRODUCTS_DETAILS + id;
-    //const urlDesc = process.env.REACT_APP_URL_PRODUCTS_DESCRIPTION + id + "/description";
     const url = window.generalConfiguration.URL_PRODUCTS_DETAILS + id;
     const urlDesc = window.generalConfiguration.URL_PRODUCTS_DESCRIPTION + id + "/description";
     fetch(url,{
@@ -56,7 +54,7 @@ export default function Details() {
       </div>
       {loadDet || loadDesc ? (
         <div className="spinner">
-          <ClipLoader color={"white"} border={"10px solid"} size={50} />
+          <ClipLoader color={"#fff159"} border={"10px solid"} size={50} />
         </div>
       ) : (
         <div>
