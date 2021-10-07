@@ -3,14 +3,14 @@ import "../style/style.css";
 import logo from "../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import {withRouter} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
-function Search(props) {
+export default function Search() {
   const [searchText, setSearchText] = useState(""); //Guarda la palabra escrita en el input
   const onSearchTextChange = (e) => {
     setSearchText(e.target.value);
   };
-  const {history} = props;
+  const history = useHistory();
   const handleSubmit = (search) => {
        history.push(`/items/search/${searchText}`)
   };
@@ -53,4 +53,3 @@ function Search(props) {
     </header>
   );
 }
-export default withRouter(Search);
