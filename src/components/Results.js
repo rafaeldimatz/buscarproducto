@@ -10,32 +10,40 @@ export default function Results() {
   const [load, setLoad] = useState(true); //Activar/Desactivar Spinner
   //Dado el valor escrito en el input, lo tengo como parametro, para llamar a la api
   useEffect(() => {
-   const url = window.generalConfiguration.URL_PRODUCTS
-   if (searchprod !== undefined){
-    fetch(url,{
-      "access-control-allow-origin" : "*",
-      "method": "GET",
-      "headers": {
-        "search": searchprod
-      }
-    })
-      .then((res) => res.json())
-      .then((data) => {
+    const url = window.generalConfiguration.URL_PRODUCTS;
+    const fetchData = async () => {
+      try {
+        const resp = await fetch(url, {
+          "access-control-allow-origin": "*",
+          method: "GET",
+          headers: {
+            search: searchprod,
+          },
+        });
+        const data = await resp.json();
         setListProducts(data.results.slice(0, 4)); // Solo pidieron 4 elementos por eso uso el .slice(0,4)
         setLoad(false);
-      })
-      .catch((err) => console.log("Error:" + err));
-    }else{
+      } catch (e) {
+        console.log("Error:" + e);
+      }
+    };
+    if (searchprod !== undefined) {
+      fetchData();
+    } else {
       setLoad(false);
     }
   }, [searchprod]);
   return (
     <div className="results">
-      {listProducts.length > 0 && searchprod !== undefined && searchprod !== '' ? 
-      <div className="span-path">
-        <span>categoria - ciudad - pais</span>
-      </div>
-      :<Fragment></Fragment>}
+      {listProducts.length > 0 &&
+      searchprod !== undefined &&
+      searchprod !== "" ? (
+        <div className="span-path">
+          <span>categoria - ciudad - pais</span>
+        </div>
+      ) : (
+        <Fragment></Fragment>
+      )}
       {load ? (
         <div className="spinner">
           <ClipLoader color={"#fff159"} border={"10px solid"} size={50} />
@@ -47,7 +55,8 @@ export default function Results() {
             listProducts.length < 0 || searchprod === undefined ? (
               <div>
                 <p style={{ height: "300px", color: "#ED1B3B" }}>
-                  Ingrese un valor a buscar</p>
+                  Ingrese un valor a buscar
+                </p>
               </div>
             ) : (
               <div>
