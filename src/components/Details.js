@@ -89,7 +89,7 @@ export default function Details() {
                       </h1>
                     ) : (
                       <div>
-                        <h1>Descripcion del producto</h1>
+                        <h1 style={{margin:'30px'}}>Descripcion del producto</h1>
                         <div className="flex-details-title">
                           {productDescription.plain_text}
                         </div>

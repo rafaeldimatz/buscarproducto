@@ -69,7 +69,8 @@ justify-content: space-around;
 }
 
 .flex-items-img{
-    width: 200px;
+    width: 100px;
+    align-self: center;
 }
 
 .flex-items-title{
@@ -169,6 +170,7 @@ p{
     height: 40%;
     font-size: 10px;
     overflow: hidden;
+    margin:30px;
 }
 
 .container-state{

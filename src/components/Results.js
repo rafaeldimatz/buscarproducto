@@ -69,6 +69,7 @@ export default function Results() {
                         <img src={item.thumbnail} alt={item.title} />
                       </div>
                       <div className="flex-items-title">
+                        <h3 >${item.price}</h3>
                         <p>{item.title}</p>
                         <p className="type">{item.prices.prices[0].type}</p>
                       </div>
